@@ -38,6 +38,7 @@
   const nezdar = $('[data-nezdar]');
   const znovu = $('[data-znovu]');
   const odeslatTlacitko = formular ? $('button[type="submit"]', formular) : null;
+  const past = formular ? $('input[name="web"]', formular) : null;
   let odesila = false;
   function zdrojNavstevy() {
     const p = new URLSearchParams(location.search);
@@ -67,13 +68,15 @@
     formular.setAttribute('aria-busy', 'true');
     let povedlo = false;
     if (ADRESA_ODESLANI) {
-      const data = new URLSearchParams(new FormData(formular));
+      const data = new URLSearchParams();
       data.set('typ', 'newsletter');
-      data.set('email', email);
-      data.set('zdroj', zdrojNavstevy());
+      data.set('email', email.trim().toLowerCase());
+      const zdroj = zdrojNavstevy();
+      if (zdroj) data.set('zdroj', zdroj);
       data.set('stranka', location.pathname);
+      if (past && past.value) data.set('web', past.value);
       const preruseni = typeof AbortController === 'function' ? new AbortController() : null;
-      const casovac = preruseni ? setTimeout(() => preruseni.abort(), 15000) : 0;
+      const casovac = preruseni ? setTimeout(() => preruseni.abort(), 20000) : 0;
       try {
         const odpoved = await fetch(ADRESA_ODESLANI, {
           method: 'POST',
@@ -82,7 +85,10 @@
           cache: 'no-store',
           signal: preruseni ? preruseni.signal : undefined,
         });
-        povedlo = odpoved.status >= 200 && odpoved.status < 300;
+        const text = await odpoved.text();
+        let telo = null;
+        try { telo = JSON.parse(text); } catch (e) { telo = null; }
+        povedlo = odpoved.ok && !!telo && telo.ok === true;
       } catch (e) {
         povedlo = false;
       } finally {

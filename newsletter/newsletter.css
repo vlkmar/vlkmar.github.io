@@ -522,3 +522,11 @@ html[data-stav="nezdar"] .nezdar { visibility: visible; }
   cursor: pointer;
 }
 .formular[aria-busy="true"] .tlacitko-vyzva { opacity: .6; cursor: progress; }
+.past {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
