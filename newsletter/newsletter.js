@@ -34,7 +34,7 @@
       chyba.textContent = '';
     }
   }
-  const ADRESA_ODESLANI = "";
+  const ADRESA_ODESLANI = "https://hook.eu2.make.com/6aw6xmsct7aux0skpa2f4n4uf69pq7g2";
   const nezdar = $('[data-nezdar]');
   const znovu = $('[data-znovu]');
   const odeslatTlacitko = formular ? $('button[type="submit"]', formular) : null;
