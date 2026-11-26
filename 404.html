@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Stránka nenalezena · Vlk Marian</title>
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='%23980323'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/fonts/pisma.css?v=c63486d983">
+<style>
+  :root {
+    --bila: #FFFFFF;
+    --seda: #ECECEA;
+    --cerna: #000000;
+    --text: #000000;
+    --text-2: #4F5151;
+    --akcent: #980323;
+
+    --krivka: cubic-bezier(0.22, 1, 0.298, 0.955);
+    --t1: .3s;
+
+    --okraj: clamp(12px, .55rem + .5vw, 16px);
+    --obsah: 1240px;
+    --kraj-textu: max(clamp(var(--okraj), 12.5vw - 64px, 96px), (100vw - var(--obsah)) / 2);
+
+    --pismo: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --f-h1: clamp(2.5rem, 1.4rem + 4.4vw, 5.375rem);
+    --f-h5: clamp(1.25rem, 1.05rem + .55vw, 1.5rem);
+    --f-text: clamp(1rem, .93rem + .25vw, 1.125rem);
+    --f-mono: .78125rem;
+
+    --lista: 72px;
+    --dole: clamp(40px, 8svh, 72px);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bila);
+    color: var(--text);
+    font-family: var(--pismo);
+    font-size: var(--f-text);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -.01em;
+    font-kerning: normal;
+    font-synthesis: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  p, h1 { margin: 0; }
+
+  ::selection { background: var(--akcent); color: #fff; }
+
+  :focus-visible {
+    outline: 2px solid var(--akcent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .nav {
+    position: absolute;
+    inset: 0 0 auto;
+    display: flex;
+    align-items: center;
+    height: var(--lista);
+    padding: 0 var(--okraj);
+  }
+  .nav-logo {
+    font-size: clamp(1.375rem, 1.2rem + .45vw, 1.625rem);
+    font-weight: 700;
+    letter-spacing: -.055em;
+    line-height: 1;
+    padding: 4px 0;
+    display: inline-flex;
+    align-items: baseline;
+    gap: .16em;
+  }
+  .nav-logo-tecka {
+    flex: none;
+    width: .5em;
+    height: .5em;
+    border-radius: 50%;
+    background: var(--akcent);
+  }
+
+  .stranka {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100svh;
+    padding: var(--lista) var(--kraj-textu) var(--dole);
+  }
+
+  .stitek {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-2);
+    font-family: var(--mono);
+    font-size: var(--f-mono);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+  .stitek-tecka {
+    flex: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--akcent);
+  }
+
+  .nadpis {
+    margin-top: clamp(14px, 2.6svh, 22px);
+    font-size: var(--f-h1);
+    font-weight: 700;
+    line-height: .9;
+    letter-spacing: -.045em;
+  }
+  .nadpis span { display: block; }
+
+  .veta {
+    margin-top: clamp(12px, 2.4svh, 22px);
+    color: var(--text-2);
+    font-size: var(--f-h5);
+    line-height: 1.2;
+    letter-spacing: -.03em;
+  }
+
+  .tlacitko {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    margin-top: clamp(22px, 4.6svh, 40px);
+    padding: 0 28px;
+    border-radius: 999px;
+    background: var(--akcent);
+    color: #fff;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+    white-space: nowrap;
+    transition:
+      background-color var(--t1) var(--krivka),
+      color var(--t1) var(--krivka),
+      transform .1s ease-out;
+  }
+  .tlacitko:active { transform: scale(.97); }
+  .tlacitko:focus-visible { border-radius: 999px; }
+  @media (hover: hover) {
+    .tlacitko:hover { background: var(--cerna); color: #fff; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tlacitko { transition: none; }
+  }
+  @media (prefers-contrast: more) {
+    :root { --text-2: #2E3030; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav-logo" href="/" aria-label="Vlk Marian, domovská stránka">Vlk Marian<span class="nav-logo-tecka" aria-hidden="true"></span></a>
+</header>
+
+<main class="stranka">
+  <p class="stitek" aria-hidden="true"><span class="stitek-tecka"></span>404</p>
+  <h1 class="nadpis"><span>Tahle stránka</span> <span>tu není.</span></h1>
+  <p class="veta">Odkaz je možná starý, nebo je v&nbsp;něm překlep.</p>
+  <a class="tlacitko" href="/newsletter/">Přejít na newsletter</a>
+</main>
+
+</body>
+</html>
