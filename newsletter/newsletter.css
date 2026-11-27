@@ -433,6 +433,8 @@ html[data-stav="odeslano"] .potvrzeni { visibility: visible; }
   letter-spacing: -.005em;
 }
 .pravni a { transition: color var(--t1) var(--krivka); }
+.pravni a { position: relative; }
+.pravni a::after { content: ""; position: absolute; inset: -12px -6px; }
 @media (hover: hover) {
   .pravni a:hover { color: var(--akcent); }
 }
@@ -448,6 +450,7 @@ html[data-stav="odeslano"] .potvrzeni { visibility: visible; }
   line-height: 1.25;
 }
 .site a { transition: color var(--t1) var(--krivka); }
+.site a { padding-block: 12px; }
 @media (hover: hover) {
   .site a:hover { color: var(--akcent); }
 }
