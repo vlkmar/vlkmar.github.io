@@ -19,7 +19,8 @@
   const rada = $('[data-rada]');
   const pole = $('#email');
   const chyba = $('[data-chyba]');
-  const TVAR = /^[^\s@]+@[^\s@.]+(\.[^\s@.]+)*\.[^\s@.]{2,}$/;
+  const TVAR = /^[^\s@:]+@[^\s@.:]+(\.[^\s@.:]+)*\.[^\s@.:]{2,}$/;
+  const cisti = (h) => h.trim().replace(/^mailto:/i, '').replace(/\?.*$/, '').trim();
   const zpravy = { prazdne: 'Nejdřív napište svůj e-mail', spatne: 'V e-mailu něco chybí' };
   const vada = (hodnota) => (!hodnota ? 'prazdne' : TVAR.test(hodnota) ? '' : 'spatne');
   function ukazChybu(druh) {
@@ -106,19 +107,21 @@
     formular.noValidate = true;
     formular.addEventListener('submit', (e) => {
       e.preventDefault();
-      const v = vada(pole.value.trim());
+      pole.value = cisti(pole.value);
+      const v = vada(pole.value);
       if (v) { ukazChybu(v); pole.focus({ preventScroll: true }); return; }
       ukazChybu('');
       odeslatPrihlaseni(pole.value.trim());
     });
     pole.addEventListener('blur', () => {
-      const h = pole.value.trim();
+      if (pole.value !== cisti(pole.value)) pole.value = cisti(pole.value);
+      const h = pole.value;
       ukazChybu(h ? vada(h) : '');
     });
     pole.addEventListener('input', () => {
       const druh = rada.getAttribute('data-chyba-stav');
       if (!druh) return;
-      const h = pole.value.trim();
+      const h = cisti(pole.value);
       if (druh === 'prazdne' || !h || !vada(h)) ukazChybu('');
     });
   }
