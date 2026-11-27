@@ -517,6 +517,21 @@ html[data-stav="odeslano"] .potvrzeni { visibility: visible; }
   .formular-rada .tlacitko-vyzva { padding: 0 16px; }
   .popisek, .popisek-chyba { max-width: calc(100% - 195px); }
 }
+@media (max-width: 385px) {
+  .formular-rada .tlacitko-vyzva { padding: 0 12px; }
+  .pole { padding-left: 17px; }
+  .popisek, .popisek-chyba { left: 18px; max-width: calc(100% - 186px); }
+  .popisek { font-size: 1rem; }
+  .pole:focus ~ .popisek,
+  .pole:not(:placeholder-shown) ~ .popisek { transform: translateY(-50%) translateY(-14px) scale(.76); }
+}
+@media (max-width: 370px) {
+  .formular-rada .tlacitko-vyzva { padding: 0 10px; }
+  .popisek, .popisek-chyba { max-width: calc(100% - 182px); }
+  .popisek { font-size: .9375rem; }
+  .pole:focus ~ .popisek,
+  .pole:not(:placeholder-shown) ~ .popisek { transform: translateY(-50%) translateY(-14px) scale(.81); }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .js .je-rozdeleno .radek,
