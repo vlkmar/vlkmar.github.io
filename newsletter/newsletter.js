@@ -62,6 +62,17 @@
     nastavStav(false, false);
     if (pole) pole.focus({ preventScroll: true });
   });
+  /* Měření úspěšného přihlášení: nikdy s e-mailem. GoatCounter vždy (bez cookies);
+     GA4 a pixel jen když už běží, tedy po souhlasu (lista.js). Chyba měření nesmí rozbít potvrzení. */
+  function zaznamenejPrihlaseni() {
+    try {
+      if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+        window.goatcounter.count({ path: 'newsletter-prihlaseni', title: 'Přihlášení k newsletteru', event: true });
+      }
+    } catch (e) {}
+    try { if (typeof window.gtag === 'function') window.gtag('event', 'sign_up', { method: 'newsletter' }); } catch (e) {}
+    try { if (typeof window.fbq === 'function') window.fbq('track', 'CompleteRegistration', { content_name: 'newsletter' }); } catch (e) {}
+  }
   async function odeslatPrihlaseni(email) {
     if (odesila) return;
     odesila = true;
@@ -99,7 +110,7 @@
     odesila = false;
     if (odeslatTlacitko) odeslatTlacitko.disabled = false;
     formular.removeAttribute('aria-busy');
-    if (povedlo) nastavStav(true, true);
+    if (povedlo) { nastavStav(true, true); zaznamenejPrihlaseni(); }
     else ukazNezdar();
   }
 
