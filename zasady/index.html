@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Zásady ochrany osobních údajů · Vlk Marian</title>
+<meta name="description" content="Jaké údaje o vás web vlkmar.cz zpracovává, proč, kam putují a jak dlouho je mám.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='%23980323'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/fonts/pisma.css?v=c63486d983">
+<style>
+  :root {
+    --bila: #FFFFFF;
+    --seda: #ECECEA;
+    --cerna: #000000;
+    --text: #000000;
+    --text-2: #4F5151;
+    --akcent: #980323;
+
+    --okraj: clamp(12px, .55rem + .5vw, 16px);
+    --obsah: 1240px;
+    --kraj-textu: max(clamp(var(--okraj), 12.5vw - 64px, 96px), (100vw - var(--obsah)) / 2);
+
+    --pismo: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --f-h1: clamp(2.25rem, 1.3rem + 3.6vw, 4.5rem);
+    --f-h2: clamp(1.375rem, 1.15rem + .7vw, 1.75rem);
+    --f-text: clamp(1rem, .96rem + .15vw, 1.0625rem);
+    --f-mono: .78125rem;
+
+    --lista: 72px;
+    --sirka-textu: 42rem;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bila);
+    color: var(--text);
+    font-family: var(--pismo);
+    font-size: var(--f-text);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -.005em;
+    font-kerning: normal;
+    font-synthesis: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  a { color: inherit; }
+  p, h1, h2, h3, ul { margin: 0; }
+
+  ::selection { background: var(--akcent); color: #fff; }
+
+  :focus-visible {
+    outline: 2px solid var(--akcent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    height: var(--lista);
+    padding: 0 var(--okraj);
+  }
+  .nav-logo {
+    font-size: clamp(1.375rem, 1.2rem + .45vw, 1.625rem);
+    font-weight: 700;
+    letter-spacing: -.055em;
+    line-height: 1;
+    padding: 4px 0;
+    display: inline-flex;
+    align-items: baseline;
+    gap: .16em;
+    text-decoration: none;
+  }
+  .nav-logo-tecka {
+    flex: none;
+    width: .5em;
+    height: .5em;
+    border-radius: 50%;
+    background: var(--akcent);
+  }
+
+  .stranka {
+    padding: clamp(32px, 7svh, 72px) var(--kraj-textu) clamp(64px, 12svh, 120px);
+  }
+  .text { max-width: var(--sirka-textu); }
+
+  .stitek {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-2);
+    font-family: var(--mono);
+    font-size: var(--f-mono);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+  .stitek-tecka {
+    flex: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--akcent);
+  }
+
+  h1 {
+    margin-top: clamp(14px, 2.6svh, 22px);
+    font-size: var(--f-h1);
+    font-weight: 700;
+    line-height: .95;
+    letter-spacing: -.045em;
+    text-wrap: balance;
+  }
+
+  .uvod { margin-top: clamp(24px, 4svh, 40px); }
+  .uvod p + p, .oddil p + p, .oddil p + address, .oddil address + p, .oddil p + ul, .oddil ul + p, .oddil h3 + p, .oddil h3 + ul { margin-top: .75em; }
+
+  .oddil {
+    margin-top: clamp(40px, 7svh, 64px);
+    padding-top: clamp(20px, 3svh, 28px);
+    border-top: 1px solid var(--seda);
+  }
+  h2 {
+    font-size: var(--f-h2);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -.03em;
+    margin-bottom: .75em;
+    text-wrap: balance;
+  }
+  h3 {
+    margin-top: 1.5em;
+    font-size: var(--f-text);
+    font-weight: 700;
+    letter-spacing: -.01em;
+  }
+
+  ul { padding-left: 1.25em; }
+  li + li { margin-top: .35em; }
+  li::marker { color: var(--akcent); }
+
+  .tlumene { color: var(--text-2); }
+
+  .adresa {
+    font-style: normal;
+  }
+
+  .tabulka {
+    width: 100%;
+    margin-top: 1em;
+    border-collapse: collapse;
+    font-size: .9375rem;
+    line-height: 1.4;
+  }
+  .tabulka th, .tabulka td {
+    padding: 12px 16px 12px 0;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--seda);
+  }
+  .tabulka th {
+    color: var(--text-2);
+    font-family: var(--mono);
+    font-size: var(--f-mono);
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+  .tabulka td:first-child { font-weight: 700; }
+  .siroka { max-width: 64rem; }
+
+  @media (max-width: 720px) {
+    .tabulka thead { display: none; }
+    .tabulka, .tabulka tbody, .tabulka tr, .tabulka td { display: block; width: 100%; }
+    .tabulka tr { padding: 14px 0; border-bottom: 1px solid var(--seda); }
+    .tabulka td { padding: 2px 0; border: 0; }
+    .tabulka td:not(:first-child)::before {
+      content: attr(data-nazev) ": ";
+      color: var(--text-2);
+    }
+  }
+
+  @media (prefers-contrast: more) {
+    :root { --text-2: #2E3030; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav-logo" href="/" aria-label="Vlk Marian, domovská stránka">Vlk Marian<span class="nav-logo-tecka" aria-hidden="true"></span></a>
+</header>
+
+<main class="stranka">
+  <div class="text">
+    <p class="stitek"><span class="stitek-tecka" aria-hidden="true"></span>Platí od 27. 11. 2026</p>
+    <h1>Zásady ochrany osobních údajů</h1>
+
+    <div class="uvod">
+      <p>Tady najdete, jaké údaje o&nbsp;vás web vlkmar.cz zpracovává, proč, kam putují a&nbsp;jak dlouho je mám. Údaje nikomu neprodávám.</p>
+      <p>Web se zrovna dostavuje. Některé části popsané níže (poptávkové formuláře, měření a&nbsp;lišta cookies) spouštím postupně.</p>
+      <p class="tlumene">Kde píšu „GDPR“, myslím obecné nařízení o&nbsp;ochraně osobních údajů (nařízení Evropské unie 2016/679).</p>
+    </div>
+
+    <section class="oddil" aria-labelledby="spravce">
+      <h2 id="spravce">1. Kdo vaše údaje spravuje</h2>
+      <p>Správce údajů (ten, kdo rozhoduje, proč a&nbsp;jak se údaje zpracovávají) jsem já:</p>
+      <address class="adresa">Marian Vlk<br><a href="mailto:marian@vlkmar.cz">marian@vlkmar.cz</a></address>
+      <p>S&nbsp;čímkoli ohledně vašich údajů mi napište na <a href="mailto:marian@vlkmar.cz">marian@vlkmar.cz</a>. Pověřence pro ochranu osobních údajů jsem nejmenoval.</p>
+    </section>
+
+    <section class="oddil" aria-labelledby="poptavka">
+      <h2 id="poptavka">2. Poptávka přes formulář</h2>
+      <p>Na webu jsou dva formuláře poptávky: „Obsah na klíč“ a&nbsp;„AI content systém“.</p>
+
+      <h3>Co dostanu</h3>
+      <p>Z&nbsp;formuláře Obsah na klíč:</p>
+      <ul>
+        <li>jméno a&nbsp;příjmení,</li>
+        <li>e-mail,</li>
+        <li>odkaz na váš Instagram, TikTok nebo web,</li>
+        <li>kdy chcete začít,</li>
+        <li>telefon, pokud ho vyplníte.</li>
+      </ul>
+      <p>Z&nbsp;formuláře AI content systém:</p>
+      <ul>
+        <li>jméno,</li>
+        <li>e-mail,</li>
+        <li>odkaz na váš profil nebo web,</li>
+        <li>jestli už máte platící zákazníky,</li>
+        <li>vaši otázku, pokud ji napíšete.</li>
+      </ul>
+      <p>S&nbsp;oběma formuláři se navíc samo odešle:</p>
+      <ul>
+        <li>přes kterou stránku poptáváte,</li>
+        <li>zdroj návštěvy: značky z&nbsp;odkazu, přes který jste přišli (třeba z&nbsp;kterého videa na Instagramu), a&nbsp;stránka, ze které jste k&nbsp;formuláři přišli.</li>
+      </ul>
+
+      <h3>Proč a na jakém základě</h3>
+      <p>Údaje z&nbsp;formuláře použiju k&nbsp;tomu, abych vám odpověděl, domluvil s&nbsp;vámi hovor a&nbsp;poslal vám nabídku. Žádáte o&nbsp;to vy a&nbsp;jde o&nbsp;kroky před uzavřením smlouvy (čl. 6 odst. 1 písm. b&nbsp;GDPR).</p>
+      <p>Zdroj návštěvy mi řekne, odkud poptávky chodí, třeba z&nbsp;kterého videa. Podle toho se rozhoduju, co točit dál. Tady jde o&nbsp;můj oprávněný zájem (čl. 6 odst. 1 písm. f&nbsp;GDPR). Oprávněný zájem je důvod, kvůli kterému smím údaje zpracovat i&nbsp;bez vašeho souhlasu, pokud nad ním nepřeváží vaše zájmy a&nbsp;práva.</p>
+      <p>Odesláním poptávky vás nepřihlašuju k&nbsp;newsletteru. Ten má vlastní přihlášení.</p>
+
+      <h3>Kam údaje jdou</h3>
+      <p>Odeslaný formulář převezme služba Make. Ta mi ho pošle e-mailem do schránky marian@vlkmar.cz, kterou provozuje THINline s.r.o. v&nbsp;Česku. Zároveň poptávku uloží jako kontakt do systeme.io, kde si vedu kontakty. Kdo tyto služby provozuje a&nbsp;kde leží data, najdete v&nbsp;oddílu 10.</p>
+
+      <h3>Jak dlouho</h3>
+      <p>Údaje z&nbsp;poptávky, včetně zdroje návštěvy a&nbsp;naší navazující e-mailové komunikace, smažu nejpozději 12&nbsp;měsíců od naší poslední zprávy.</p>
+      <p>Když se domluvíme na spolupráci, zpracovávám údaje dál po dobu smlouvy (čl. 6 odst. 1 písm. b&nbsp;GDPR). Faktury a&nbsp;další doklady pak uchovávám tak dlouho, jak mi ukládají daňové a&nbsp;účetní předpisy (čl. 6 odst. 1 písm. c&nbsp;GDPR).</p>
+
+      <h3>Musíte údaje vyplnit?</h3>
+      <p>Nemusíte, zákon ani smlouva vám to neukládají. Bez povinných polí ale formulář neodešlete a&nbsp;já vám nebudu mít jak odpovědět. Telefon a&nbsp;otázka jsou nepovinné.</p>
+    </section>
+
+    <section class="oddil" aria-labelledby="newsletter">
+      <h2 id="newsletter">3. Newsletter a odpovědi na něj</h2>
+
+      <h3>Co dostanu</h3>
+      <ul>
+        <li>váš e-mail,</li>
+        <li>kdy jste se přihlásili,</li>
+        <li>adresu stránky, na které jste se přihlásili, a&nbsp;značky z&nbsp;odkazu, přes který jste na web přišli,</li>
+        <li>když na newsletter odpovíte, i&nbsp;vaši odpověď.</li>
+      </ul>
+
+      <h3>Jak přihlášení probíhá</h3>
+      <p>E-mail zadáte do formuláře na webu. Služba Make ho předá do systeme.io, kde si vedu seznam odběratelů. Hned potom vám přijde uvítací e-mail a&nbsp;newsletter vám začne chodit.</p>
+      <p>V&nbsp;uvítacím i&nbsp;v&nbsp;každém dalším e-mailu je odkaz, kterým se jedním kliknutím odhlásíte. Kdyby vaši adresu do formuláře zadal někdo jiný, stačí na něj kliknout a&nbsp;nic dalšího vám nepřijde.</p>
+
+      <h3>Proč a na jakém základě</h3>
+      <p>Abych vám mohl posílat newsletter. Dělám to s&nbsp;vaším souhlasem (čl. 6 odst. 1 písm. a&nbsp;GDPR a&nbsp;§ 7 odst. 2 zákona č. 480/2004 Sb., o&nbsp;některých službách informační společnosti).</p>
+      <p>Kdy a&nbsp;na které stránce jste se přihlásili, si držím, abych uměl doložit, že jste mi souhlas dali (čl. 7 odst. 1 GDPR). Značky z&nbsp;odkazu mi řeknou, odkud odběratelé přicházejí, a&nbsp;podle toho se rozhoduju, co točit dál. Na vaši odpověď na newsletter potřebuju údaje, abych vám mohl odepsat. Ve všech třech případech jde o&nbsp;můj oprávněný zájem (čl. 6 odst. 1 písm. f&nbsp;GDPR).</p>
+
+      <h3>Kam údaje jdou</h3>
+      <p>Make přihlášku předá a&nbsp;systeme.io uloží váš e-mail do seznamu odběratelů. Ze systeme.io newsletter také odchází, z&nbsp;adresy marian@newsletter.vlkmar.cz.</p>
+      <p>Když na newsletter odpovíte, vaši zprávu přepošle služba Forward Email do mé schránky marian@vlkmar.cz u&nbsp;THINline. Forward Email zprávy jen přeposílá a&nbsp;neukládá je.</p>
+
+      <h3>Jak dlouho</h3>
+      <ul>
+        <li><strong>E-mail a&nbsp;údaje o&nbsp;přihlášení:</strong> dokud se neodhlásíte. Odkaz na odhlášení je v&nbsp;každém e-mailu. Odhlásit se můžete i&nbsp;tak, že mi napíšete.</li>
+        <li><strong>Po odhlášení</strong> nechám vaši adresu a&nbsp;záznam o&nbsp;přihlášení nejdéle 3&nbsp;roky na seznamu odhlášených. Slouží jen k&nbsp;tomu, aby vám newsletter znovu omylem nepřišel, a&nbsp;abych při případné kontrole doložil, že jsem do odhlášení váš souhlas měl. Odhlášeným nesmím obchodní sdělení dál posílat (čl. 6 odst. 1 písm. c&nbsp;GDPR) a&nbsp;mám oprávněný zájem se bránit případným nárokům (čl. 6 odst. 1 písm. f&nbsp;GDPR).</li>
+        <li><strong>Záznamy služby Make</strong> o&nbsp;předání přihlášky se samy mažou po 7&nbsp;dnech.</li>
+        <li><strong>Forward Email</strong> přeposílané zprávy neukládá. Jen když se zprávu nepodaří doručit, drží nejvýš 7&nbsp;dní její hlavičku (odesílatele, příjemce a&nbsp;předmět), bez obsahu.</li>
+        <li><strong>Vaše odpovědi</strong> mám ve schránce nejdéle 12&nbsp;měsíců od naší poslední zprávy.</li>
+      </ul>
+
+      <h3>Musíte údaje vyplnit?</h3>
+      <p>Ne. Bez e-mailu vám ale newsletter poslat nemůžu.</p>
+    </section>
+
+    <section class="oddil" aria-labelledby="email">
+      <h2 id="email">4. Když mi napíšete e-mail</h2>
+      <p>Když mi napíšete přímo na marian@vlkmar.cz, mám vaši adresu, jméno, pokud ho uvedete, a&nbsp;obsah zprávy. Použiju je k&nbsp;tomu, abych vám odpověděl. To je můj oprávněný zájem (čl. 6 odst. 1 písm. f&nbsp;GDPR), u&nbsp;dotazu na spolupráci jde o&nbsp;kroky před uzavřením smlouvy (čl. 6 odst. 1 písm. b&nbsp;GDPR).</p>
+      <p>Zprávy leží v&nbsp;mé schránce u&nbsp;THINline. Smažu je nejpozději 12&nbsp;měsíců od naší poslední zprávy, pokud z&nbsp;nich nevznikne spolupráce (pak platí poslední odstavec oddílu&nbsp;2).</p>
+    </section>
+
+    <section class="oddil" aria-labelledby="navsteva">
+      <h2 id="navsteva">5. Návštěva webu</h2>
+
+      <h3>Co se zpracuje</h3>
+      <p>Adresa IP (číselná adresa vašeho zařízení v&nbsp;internetu) a&nbsp;údaje o&nbsp;vašem prohlížeči. Bez nich se stránka nedá doručit.</p>
+
+      <h3>Proč a na jakém základě</h3>
+      <p>Aby se vám stránka zobrazila a&nbsp;web byl chráněný před útoky. To je můj oprávněný zájem (čl. 6 odst. 1 písm. f&nbsp;GDPR).</p>
+
+      <h3>Kam</h3>
+      <p>Web běží na GitHub Pages od firmy GitHub, Inc. z&nbsp;USA. GitHub Pages je hosting, tedy služba, na které je web uložený. GitHub uvádí, že adresy IP návštěvníků ukládá z&nbsp;bezpečnostních důvodů. Písma jsou uložená přímo na webu, takže si pro ně váš prohlížeč nechodí k&nbsp;nikomu dalšímu.</p>
+
+      <h3>Jak dlouho</h3>
+      <p>Podle pravidel GitHubu, popsaných v&nbsp;jeho <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">prohlášení o&nbsp;ochraně soukromí</a>. Přesnou dobu GitHub neuvádí.</p>
+    </section>
+
+    <section class="oddil" aria-labelledby="goatcounter">
+      <h2 id="goatcounter">6. Měření návštěvnosti bez cookies (GoatCounter)</h2>
+
+      <h3>Co se zpracuje</h3>
+      <p>Kolik lidí web navštívilo, které stránky si prohlédli, odkud přišli (včetně značek z&nbsp;odkazu) a&nbsp;co na webu udělali: kliknutí na tlačítko, odeslaná poptávka, přihlášení k&nbsp;newsletteru.</p>
+      <p>GoatCounter do vašeho zařízení nic neukládá. Adresu IP a&nbsp;údaje o&nbsp;prohlížeči drží jen v&nbsp;paměti serveru, nejvýš 8&nbsp;hodin, aby rozlišil jednotlivé návštěvy. Do databáze je nezapisuje a&nbsp;nesleduje vás na jiných webech.</p>
+
+      <h3>Proč a na jakém základě</h3>
+      <p>Abych věděl, odkud lidé a&nbsp;poptávky chodí, a&nbsp;tedy co točit víc. To je můj oprávněný zájem (čl. 6 odst. 1 písm. f&nbsp;GDPR). GoatCounter proto běží i&nbsp;tehdy, když cookies odmítnete. Kdo s&nbsp;tím nesouhlasí, může vznést námitku (oddíl&nbsp;11).</p>
+
+      <h3>Kam</h3>
+      <p>GoatCounter, servery ve Finsku a&nbsp;v&nbsp;Německu.</p>
+
+      <h3>Jak dlouho</h3>
+      <p>Údaje z&nbsp;paměti zmizí nejpozději po 8&nbsp;hodinách. Souhrnné statistiky, ze kterých už nejde poznat konkrétního člověka, nechávám po dobu provozu webu.</p>
+    </section>
+
+    <section class="oddil" aria-labelledby="mereni">
+      <h2 id="mereni">7. Měření a reklama s cookies (Google Analytics a Meta pixel)</h2>
+      <p>Tyhle dva nástroje se spustí, až když s&nbsp;nimi souhlasíte v&nbsp;liště cookies. Bez souhlasu se vůbec nenačtou a&nbsp;nic neodešlou.</p>
+
+      <h3>Co se zpracuje</h3>
+      <p>Cookies z&nbsp;tabulky v&nbsp;oddílu 8. S&nbsp;nimi adresa stránky, kterou si prohlížíte, a&nbsp;co na webu proběhne, třeba zobrazení stránky nebo odeslaná poptávka.</p>
+
+      <h3>Proč</h3>
+      <ul>
+        <li>Google Analytics (nástroj Googlu na měření návštěvnosti): abych viděl, jak lidé web používají a&nbsp;odkud přicházejí.</li>
+        <li>Meta pixel (kousek kódu od Mety, firmy za Facebookem a&nbsp;Instagramem): abych mohl měřit reklamu na Facebooku a&nbsp;Instagramu a&nbsp;ukázat ji lidem, kteří web navštívili.</li>
+      </ul>
+
+      <h3>Na jakém základě</h3>
+      <p>Váš souhlas. Pro uložení a&nbsp;čtení cookies podle § 89 odst. 3 zákona č. 127/2005 Sb., o&nbsp;elektronických komunikacích. Pro zpracování údajů podle čl. 6 odst. 1 písm. a&nbsp;GDPR.</p>
+
+      <h3>Kam</h3>
+      <ul>
+        <li>Google Analytics provozuje Google Ireland Limited (Irsko) jako můj zpracovatel. Údaje se předávají i&nbsp;do USA.</li>
+        <li>U&nbsp;Meta pixelu jsem s&nbsp;firmou Meta Platforms Ireland Limited (Irsko) společný správce (čl. 26 GDPR; rozsudek Soudního dvora EU C‑40/17 Fashion ID). Společně odpovídáme jen za to, že pixel údaje na webu sebere a&nbsp;předá Metě. Já odpovídám za to, že vás o&nbsp;tom informuju a&nbsp;že mám váš souhlas. Co s&nbsp;údaji Meta dělá potom, určuje sama jako samostatný správce a&nbsp;popisuje to ve svých <a href="https://www.facebook.com/privacy/policy" rel="noopener">zásadách ochrany osobních údajů</a>. Podstatu naší dohody shrnuje <a href="https://www.facebook.com/legal/controller_addendum" rel="noopener">Dodatek o&nbsp;správcích</a>. Meta může údaje předávat i&nbsp;do USA, své mateřské firmě Meta Platforms, Inc.</li>
+      </ul>
+
+      <h3>Jak dlouho</h3>
+      <p>Souhlas i&nbsp;odmítnutí platí 12&nbsp;měsíců, potom se vás web zeptá znovu. Jak dlouho platí jednotlivé cookies, je v&nbsp;tabulce v&nbsp;oddílu 8. Údaje v&nbsp;Google Analytics se mažou po 14&nbsp;měsících. U&nbsp;Mety platí její pravidla.</p>
+
+      <h3>Musíte souhlasit?</h3>
+      <p>Ne. Web funguje stejně i&nbsp;bez souhlasu. Poptávku i&nbsp;přihlášku k&nbsp;newsletteru odešlete i&nbsp;tak.</p>
+    </section>
+  </div>
+
+  <section class="oddil text siroka" aria-labelledby="cookies">
+    <h2 id="cookies">8. Cookies</h2>
+    <p>Cookies jsou malé soubory, které web ukládá do vašeho prohlížeče. Web vlkmar.cz používá tyto:</p>
+    <table class="tabulka">
+      <thead>
+        <tr><th scope="col">Název</th><th scope="col">Kdo ji ukládá</th><th scope="col">K čemu</th><th scope="col">Jak dlouho</th><th scope="col">Souhlas</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>cc_cookie</td><td data-nazev="Ukládá">web vlkmar.cz (lišta cookies)</td><td data-nazev="K čemu">pamatuje si, jak jste se v&nbsp;liště rozhodli</td><td data-nazev="Jak dlouho">12 měsíců</td><td data-nazev="Souhlas">není potřeba</td></tr>
+        <tr><td>_ga, _ga_&lt;ID&gt;</td><td data-nazev="Ukládá">Google (Google Analytics), na doméně vlkmar.cz</td><td data-nazev="K čemu">rozliší návštěvníky a&nbsp;návštěvy pro měření</td><td data-nazev="Jak dlouho">nejvýš 2 roky</td><td data-nazev="Souhlas">potřeba</td></tr>
+        <tr><td>_fbp</td><td data-nazev="Ukládá">Meta (pixel), na doméně vlkmar.cz</td><td data-nazev="K čemu">pozná prohlížeč pro reklamu a&nbsp;měření</td><td data-nazev="Jak dlouho">90 dní</td><td data-nazev="Souhlas">potřeba</td></tr>
+        <tr><td>_fbc</td><td data-nazev="Ukládá">Meta (pixel), na doméně vlkmar.cz</td><td data-nazev="K čemu">uloží označení kliknutí, když přijdete z&nbsp;odkazu na Facebooku nebo Instagramu</td><td data-nazev="Jak dlouho">90 dní</td><td data-nazev="Souhlas">potřeba</td></tr>
+        <tr><td>fr</td><td data-nazev="Ukládá">Meta, na doméně Mety</td><td data-nazev="K čemu">reklama a&nbsp;měření Mety</td><td data-nazev="Jak dlouho">90 dní</td><td data-nazev="Souhlas">potřeba</td></tr>
+      </tbody>
+    </table>
+    <div class="text">
+      <p>Cookie cc_cookie je technicky nezbytná: bez ní by se vás web na souhlas ptal na každé stránce znovu. Proto souhlas nepotřebuje (§ 89 odst. 3 zákona o&nbsp;elektronických komunikacích). GoatCounter ani formuláře žádné cookies neukládají.</p>
+    </div>
+  </section>
+
+  <div class="text">
+    <section class="oddil" aria-labelledby="odvolani">
+      <h2 id="odvolani">9. Jak změnit nebo odvolat souhlas s cookies</h2>
+      <p>Svou volbu můžete kdykoli změnit. V&nbsp;patičce každé stránky je odkaz „Nastavení cookies“. Znovu otevře lištu a&nbsp;v&nbsp;ní souhlas dáte, nebo odvoláte. Odvolat je stejně snadné jako souhlasit.</p>
+      <p>Odvolání platí od té chvíle dál. Na zpracování před odvoláním nic nemění. Cookies, které už v&nbsp;prohlížeči máte, můžete smazat i&nbsp;v&nbsp;nastavení prohlížeče. Web se vás pak na souhlas zeptá znovu.</p>
+    </section>
+  </div>
+
+  <section class="oddil text siroka" aria-labelledby="sluzby">
+    <h2 id="sluzby">10. Kdo s údaji pracuje a kde leží</h2>
+    <p>Kromě Mety (oddíl 7) pracují tyto firmy s&nbsp;údaji jen pro mě a&nbsp;podle mých pokynů (jsou to moji zpracovatelé).</p>
+    <table class="tabulka">
+      <thead>
+        <tr><th scope="col">Služba</th><th scope="col">Kdo ji provozuje</th><th scope="col">K čemu ji používám</th><th scope="col">Kde jsou data</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>GitHub Pages</td><td data-nazev="Provozuje">GitHub, Inc., USA</td><td data-nazev="K čemu">hosting webu</td><td data-nazev="Data">podle GitHubu v&nbsp;různých zemích včetně USA</td></tr>
+        <tr><td>GoatCounter</td><td data-nazev="Provozuje">GoatCounter (goatcounter.com)</td><td data-nazev="K čemu">měření návštěvnosti bez cookies</td><td data-nazev="Data">Finsko a&nbsp;Německo</td></tr>
+        <tr><td>Make</td><td data-nazev="Provozuje">Celonis, Inc., USA</td><td data-nazev="K čemu">předá formuláře do e-mailu a&nbsp;do systeme.io</td><td data-nazev="Data">datové centrum v&nbsp;Evropské unii</td></tr>
+        <tr><td>systeme.io</td><td data-nazev="Provozuje">ITACWT Limited, Irsko</td><td data-nazev="K čemu">kontakty, seznam odběratelů a&nbsp;rozesílání newsletteru</td><td data-nazev="Data">servery Amazon Web Services v&nbsp;Irsku; podle systeme.io údaje Evropskou unii neopouštějí</td></tr>
+        <tr><td>Forward Email</td><td data-nazev="Provozuje">Forward Email LLC, USA</td><td data-nazev="K čemu">přepošle odpovědi na newsletter do mé schránky</td><td data-nazev="Data">servery v&nbsp;USA; zprávy jen přeposílá, neukládá</td></tr>
+        <tr><td>THINline</td><td data-nazev="Provozuje">THINline s.r.o., Česko</td><td data-nazev="K čemu">e-mailová schránka marian@vlkmar.cz</td><td data-nazev="Data">Česko</td></tr>
+        <tr><td>Google Analytics</td><td data-nazev="Provozuje">Google Ireland Limited, Irsko</td><td data-nazev="K čemu">měření, jen se souhlasem</td><td data-nazev="Data">EU, předání do USA (Google LLC)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="text">
+      <h3>Předání mimo Evropskou unii</h3>
+      <p>Do USA se údaje dostanou přes GitHub, Make, Forward Email, Google a&nbsp;Metu.</p>
+      <ul>
+        <li><strong>GitHub, Inc., Celonis, Inc. (Make), Google LLC a&nbsp;Meta Platforms, Inc.</strong> jsou zapsané v&nbsp;rámci EU–USA Data Privacy Framework. Předání k&nbsp;nim se opírá o&nbsp;rozhodnutí Evropské komise o&nbsp;odpovídající ochraně údajů (rozhodnutí (EU) 2023/1795, čl. 45 GDPR). Make má pro případ, že by tento rámec přestal platit, navíc standardní smluvní doložky ve své <a href="https://cdn.make.com/cms/documents/data-processing-agreement.pdf" rel="noopener">zpracovatelské smlouvě</a>.</li>
+        <li><strong>Forward Email LLC</strong> v&nbsp;tomto rámci zapsaná není. Předání se u&nbsp;ní opírá o&nbsp;standardní smluvní doložky (smlouvu, jejíž znění schválila Evropská komise, čl. 46 odst. 2 písm. c&nbsp;GDPR), které jsou součástí její <a href="https://forwardemail.net/en/dpa" rel="noopener">zpracovatelské smlouvy</a>.</li>
+      </ul>
+      <p>Kopii těchto záruk vám na požádání pošlu.</p>
+    </div>
+  </section>
+
+  <div class="text">
+    <section class="oddil" aria-labelledby="prava">
+      <h2 id="prava">11. Vaše práva</h2>
+      <p>Máte právo:</p>
+      <ul>
+        <li>vědět, jaké údaje o&nbsp;vás mám, a&nbsp;dostat jejich kopii (čl. 15 GDPR),</li>
+        <li>nechat je opravit (čl. 16),</li>
+        <li>nechat je smazat (čl. 17),</li>
+        <li>omezit jejich zpracování, třeba než ověřím, jestli jsou správné (čl. 18),</li>
+        <li>dostat údaje, které jste mi sami dali, v&nbsp;běžném strojově čitelném formátu, nebo je nechat předat jinému správci (čl. 20; platí u&nbsp;poptávky a&nbsp;newsletteru),</li>
+        <li>kdykoli odvolat souhlas (čl. 7 odst. 3): u&nbsp;newsletteru odkazem v&nbsp;e-mailu, u&nbsp;cookies odkazem „Nastavení cookies“. Odvolání nemá vliv na zpracování před ním.</li>
+      </ul>
+      <p><strong>Máte také právo vznést námitku</strong> proti zpracování na základě mého oprávněného zájmu (čl. 21 GDPR). Týká se to návštěvy webu, měření GoatCounterem, zdroje návštěvy u&nbsp;poptávky a&nbsp;newsletteru, odpovědí na vaše e-maily a&nbsp;seznamu odhlášených. Údaje pak dál nezpracuju, ledaže doložím závažné důvody, které převáží vaše zájmy, nebo je potřebuju k&nbsp;obhajobě právních nároků.</p>
+      <p>Stačí napsat na <a href="mailto:marian@vlkmar.cz">marian@vlkmar.cz</a>. Odpovím bez zbytečného odkladu, nejpozději do měsíce.</p>
+      <p>U&nbsp;údajů z&nbsp;Meta pixelu můžete svá práva uplatnit u&nbsp;mě i&nbsp;přímo u&nbsp;Mety (čl. 26 odst. 3 GDPR).</p>
+      <p>Když si myslíte, že s&nbsp;vašimi údaji nezacházím správně, můžete podat stížnost u&nbsp;Úřadu pro ochranu osobních údajů (<a href="https://uoou.gov.cz" rel="noopener">uoou.gov.cz</a>).</p>
+    </section>
+
+    <section class="oddil" aria-labelledby="automaticky">
+      <h2 id="automaticky">12. Automatizované rozhodování</h2>
+      <p>Nerozhoduju o&nbsp;vás automaticky, tedy bez účasti člověka, tak, aby to pro vás mělo právní nebo podobně závažné důsledky.</p>
+    </section>
+
+    <section class="oddil" aria-labelledby="zmeny">
+      <h2 id="zmeny">13. Změny zásad</h2>
+      <p>Kdybych chtěl vaše údaje použít k&nbsp;jinému účelu, než tu popisuju, řeknu vám to předem. Novou verzi zásad zveřejním na této stránce s&nbsp;novým datem účinnosti.</p>
+    </section>
+  </div>
+</main>
+
+</body>
+</html>
