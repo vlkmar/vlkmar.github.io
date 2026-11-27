@@ -7,7 +7,7 @@
 <title>Stránka nenalezena · Vlk Marian</title>
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='%23980323'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="/fonts/pisma.css?v=c63486d983">
+<link rel="stylesheet" href="/fonts/pisma.css?v=83283d817e">
 <style>
   :root {
     --bila: #FFFFFF;
@@ -166,6 +166,25 @@
     .tlacitko:hover { background: var(--cerna); color: #fff; }
   }
 
+  .pravni {
+    position: absolute;
+    left: var(--kraj-textu);
+    right: var(--kraj-textu);
+    bottom: clamp(20px, 3.5svh, 36px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    color: var(--text-2);
+    font-size: 13px;
+    line-height: 1.3;
+    letter-spacing: 0;
+  }
+  .pravni a { position: relative; transition: color var(--t1) var(--krivka); }
+  .pravni a::after { content: ""; position: absolute; inset: -12px -6px; }
+  @media (hover: hover) {
+    .pravni a:hover { color: var(--akcent); }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .tlacitko { transition: none; }
   }
@@ -190,8 +209,10 @@
   <p class="stitek" aria-hidden="true"><span class="stitek-tecka"></span>404</p>
   <h1 class="nadpis"><span>Tahle stránka</span> <span>tu není.</span></h1>
   <p class="veta">Odkaz je možná starý, nebo je v&nbsp;něm překlep.</p>
-  <a class="tlacitko" href="/newsletter/">Přejít na newsletter</a>
+  <a class="tlacitko" href="/">Na úvodní stránku</a>
 </main>
+
+<p class="pravni"><a href="/zasady/">Zásady ochrany osobních údajů</a><span aria-hidden="true">·</span><a href="/zasady/#odvolani" data-cc="nastaveni">Nastavení cookies</a></p>
 
 </body>
 </html>
