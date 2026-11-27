@@ -552,6 +552,10 @@ html[data-stav="odeslano"] .potvrzeni { visibility: visible; }
 }
 
 .nezdar { visibility: hidden; outline: none; }
+.odhlaseny { visibility: hidden; outline: none; }
+.odhlaseny .pozn { margin-top: 6px; }
+html[data-stav="odhlaseny"] .formular { visibility: hidden; }
+html[data-stav="odhlaseny"] .odhlaseny { visibility: visible; }
 .nezdar .pozn { margin-top: 6px; }
 html[data-stav="nezdar"] .formular { visibility: hidden; }
 html[data-stav="nezdar"] .nezdar { visibility: visible; }

@@ -54,6 +54,11 @@
     }
     return z.slice(0, 120);
   }
+  const odhlasenyBlok = $('[data-odhlaseny]');
+  function ukazOdhlaseny() {
+    html.dataset.stav = 'odhlaseny';
+    if (odhlasenyBlok) odhlasenyBlok.focus({ preventScroll: true });
+  }
   function ukazNezdar() {
     html.dataset.stav = 'nezdar';
     if (nezdar) nezdar.focus({ preventScroll: true });
@@ -79,6 +84,7 @@
     if (odeslatTlacitko) odeslatTlacitko.disabled = true;
     formular.setAttribute('aria-busy', 'true');
     let povedlo = false;
+    let odhlaseny = false;
     if (ADRESA_ODESLANI) {
       const data = new URLSearchParams();
       data.set('typ', 'newsletter');
@@ -101,6 +107,7 @@
         let telo = null;
         try { telo = JSON.parse(text); } catch (e) { telo = null; }
         povedlo = odpoved.ok && !!telo && telo.ok === true;
+        odhlaseny = povedlo && telo.stav === 'odhlaseny';
       } catch (e) {
         povedlo = false;
       } finally {
@@ -110,7 +117,8 @@
     odesila = false;
     if (odeslatTlacitko) odeslatTlacitko.disabled = false;
     formular.removeAttribute('aria-busy');
-    if (povedlo) { nastavStav(true, true); zaznamenejPrihlaseni(); }
+    if (odhlaseny) ukazOdhlaseny();
+    else if (povedlo) { nastavStav(true, true); zaznamenejPrihlaseni(); }
     else ukazNezdar();
   }
 
